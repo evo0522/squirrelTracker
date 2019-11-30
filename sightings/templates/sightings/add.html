@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <p></p>
+	<title>Add A Sighting</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid bg-3 text-center">    
+  <h3>Add A New Squirrel Sighting</h3><br>
+</div>
+    <form method="POST" action="../add_sighting_from_submission/">
+      {% csrf_token %}
+      <div class="row">
+        <div class="offset-2 col-sm-3">
+          <div class="form-group">
+            <label>Latitude</label>
+            <input type="text" class="form-control" name="Latitude" value="">
+          </div>
+        </div>
+        <div class="offset-1 col-sm-3">
+          <div class="form-group">
+            <label>Longitude</label>
+            <input type="text" class="form-control" name="Longitude" value="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="offset-2 col-sm-3">
+          <div class="form-group">
+          <label>Unique_Squirrel_ID</label>
+          <input type="text" class="form-control" name="Unique_Squirrel_ID" value="">
+        </div>
+        </div>
+          <div class="offset-1 col-sm-3">
+            <div class="form-group">
+            <label>Date</label>
+            <input type="text" class="form-control" name="Date" value="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-2 col-sm-3">
+          <div class="form-group">
+          <label>Age</label>
+          <select class="form-control" name="Age">
+            <option>Adult</option>
+            <option>Juvenile</option>
+          </select>
+        </div>
+        </div>
+          <div class="offset-1 col-sm-3">
+            <div class="form-group">
+            <label>Shift</label>
+            <input type="text" class="form-control" name="Shift" value="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-2 col-sm-3">
+          <div class="form-group">
+          <label>Primary_Fur_Color</label>
+          <input type="text" class="form-control" name="Primary_Fur_Color" value="">
+        </div>
+        </div>
+          <div class="offset-1 col-sm-3">
+            <div class="form-group">
+            <label>Location</label>
+            <input type="text" class="form-control" name="Location" value="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="offset-2 col-sm-3">
+          <div class="form-group">
+          <label>Specific_Location</label>
+          <input type="text" class="form-control" name="Specific_Location" value="">
+        </div>
+        </div>
+          <div class="offset-1 col-sm-3">
+            <div class="form-group">
+            <label>Other_Activities</label>
+            <input type="text" class="form-control" name="Other_Activities" value="">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-2 col-sm-2">
+          <div class="form-group">
+          <label>Running</label>
+          <select class="form-control" name="Running" >
+            <option value="False">False</option>
+            <option value="True">True</option>
+          </select>
+        </div>
+        </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+            <label>Chasing</label>
+            <select class="form-control" name="Chasing">
+            <option>False</option>
+            <option>True</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+          <label>Climbing</label>
+          <select class="form-control" name="Climbing">
+            <option>False</option>
+            <option>True</option>
+          </select>
+        </div>
+        </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+            <label>Eating</label>
+            <select class="form-control" name="Eating">
+            <option>False</option>
+            <option>True</option>
+          </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-2 col-sm-2">
+          <div class="form-group">
+          <label>Foraging</label>
+          <select class="form-control" name="Foraging">
+            <option>False</option>
+            <option>True</option>
+          </select>
+        </div>
+        </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+            <label>Kuks</label>
+            <select class="form-control" name="Kuks">
+            <option>False</option>
+            <option>True</option>
+          </select>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+          <label>Quaas</label>
+          <select class="form-control" name="Quaas">
+            <option>False</option>
+            <option>True</option>
+          </select>
+        </div>
+        </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+            <label>Moans</label>
+            <select class="form-control" name="Moans">
+            <option>False</option>
+            <option>True</option>
+          </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="offset-2 col-sm-2">
+          <div class="form-group">
+          <label>Tail_flags</label>
+          <select class="form-control" name="Tail_flags">
+            <option>False</option>
+            <option>True</option>
+          </select>
+        </div>
+        </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+            <label>Tail_twitches</label>
+            <select class="form-control" name="Tail_twitches">
+            <option>False</option>
+            <option>True</option>
+          </select>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="form-group">
+          <label>Approaches</label>
+          <select class="form-control" name="Approaches">
+            <option>False</option>
+            <option>True</option>
+          </select>
+        </div>
+        </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+            <label>Indifferent</label>
+            <select class="form-control" name="Indifferent">
+            <option>False</option>
+            <option>True</option>
+          </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="offset-2 col-sm-3">
+          <div class="form-group">
+          <label>Runs_from</label>
+          <select class="form-control" name="Runs_from">
+            <option>False</option>
+            <option>True</option>
+          </select>
+        </div>
+      </div>
+      <div class="offset-1 col-sm-1">
+          <div class="form-group">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add New Sighting</button>
+
+      </div>
+
+    </form>       
+</body>
+</html>
