@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full list of squirrel</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="container-fluid bg-3 text-center">    
+  <h3>All Squirrel Sightings</h3><br>
+  <button type="button" onclick="window.location.href='/sightings/add/';">Add a new squirrel sighting</button>
+  <br></br>
+</div>
+<ul>
+  {% for squirrel in squirrels %}
+ 	<div class="row">
+    <div class="offset-2 col-sm-2">
+          <p>Sighting ID: {{ squirrel.id }}</p>
+      </div>
+    	<div class="col-sm-3">
+      		<p>Squirrel ID: {{ squirrel.Unique_Squirrel_ID }}</p>
+    	</div>
+    	<div class="col-sm-2"> 
+      		<button type="button" onclick="window.location.href='/sightings/{{ squirrel.id }}/';">Edit this sighting</button>
+    	</div>
+  	</div>
+  {% endfor %}
+</ul>
+</body>
+</html>
