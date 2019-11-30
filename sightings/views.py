@@ -16,9 +16,9 @@ def list(request):
 	}
 	return render(request,'sightings/all.html',context)
 
-def single(request, st_id):
+def single(request, sq_id):
 	if request.method == 'GET':
-		squirrel = Squirrel.objects.get(id=st_id)
+		squirrel = Squirrel.objects.get(Unique_Squirrel_ID=sq_id)
 		context = {
 			'squirrel':squirrel
 		}
@@ -26,10 +26,9 @@ def single(request, st_id):
 		return render(request,'sightings/sighting.html',context)
 
 	elif request.method == 'DELETE':
-		st = Squirrel.objects.get(id=st_id)
-		st_id = st.id
-		st.delete()
-		return HttpResponse('Sighting '+str(st_id)+' has been deleted')
+		sq = Squirrel.objects.get(Unique_Squirrel_ID=sq_id)
+		sq.delete()
+		return HttpResponse('Sighting '+str(sq_id)+' has been deleted')
 
 def add(request):
 	return render(request,'sightings/add.html')

@@ -9,5 +9,5 @@ urlpatterns = [
     path('add/', views.add, name='add'),
     path('add_sighting_from_submission/', views.add_sighting_from_submission, name='add_sighting_from_submission'),
     #/sightings/<unique-squirrel-id>, A view to update a particular sighting
-    path('<str:st_id>/', views.single, name='squirrel'),
+    path('<str:sq_id>/', views.single, name='squirrel'),
 ]
