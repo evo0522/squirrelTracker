@@ -100,3 +100,80 @@ def add_sighting_from_submission(request):
 	return render(request,'sightings/all.html',context)
 
 def update_sighting_from_submission(request):
+	st_id = int(request.POST.get('st_id')[:-1])
+	print("----------")
+	print(request.POST.get('Running'))
+	print("----------")
+
+
+
+	print(st_id)
+	sighting = Squirrel.objects.get(id=st_id)
+
+	#get updated field
+	n_Latitude = request.POST.get('Latitude')
+	n_Longitude = request.POST.get('Longitude')
+	n_Unique_Squirrel_ID = request.POST.get('Unique_Squirrel_ID')
+	n_Date = request.POST.get('Date') # TODO
+	n_Age = request.POST.get('Age')
+	n_Shift = request.POST.get('Shift')
+	n_Primary_Fur_Color = request.POST.get('Primary_Fur_Color')
+	n_Location = request.POST.get('Location')
+	n_Specific_Location = request.POST.get('Specific_Location')
+	n_Other_Activities = request.POST.get('Other_Activities')
+	# print(request.POST.get('Running'))
+	#Boolean
+	n_Running = True if "true" in request.POST.get('Running').lower() else False
+	n_Chasing = True if "true" in request.POST.get('Chasing').lower() else False
+	n_Climbing = True if "true" in request.POST.get('Climbing').lower() else False
+	n_Eating = True if "true" in request.POST.get('Eating').lower() else False
+	n_Foraging = True if "true" in request.POST.get('Foraging').lower() else False
+	
+	n_Kuks = True if "true" in request.POST.get('Kuks').lower() else False
+	n_Quaas = True if "true" in request.POST.get('Quaas').lower() else False
+	n_Moans = True if "true" in request.POST.get('Moans').lower() else False
+	n_Tail_flags = True if "true" in request.POST.get('Tail_flags').lower() else False
+	n_Tail_twitches = True if "true" in request.POST.get('Tail_twitches').lower() else False
+	
+	n_Approaches = True if "true" in request.POST.get('Approaches').lower() else False
+	n_Indifferent = True if "true" in request.POST.get('Indifferent').lower() else False
+	n_Runs_from = True if "true" in request.POST.get('Runs_from').lower() else False
+
+	#update 
+	sighting.Latitude = n_Latitude
+	sighting.Longitude = n_Longitude
+	sighting.Unique_Squirrel_ID = n_Unique_Squirrel_ID
+	sighting.Date = n_Date
+	sighting.Age = n_Age
+	
+	sighting.Shift = n_Shift
+	sighting.Shift = n_Shift
+	sighting.Primary_Fur_Color = n_Primary_Fur_Color
+	sighting.Location = n_Location
+	sighting.Specific_Location = n_Specific_Location
+	
+	sighting.Other_Activities = n_Other_Activities
+	#Boolean
+	sighting.Running = n_Running
+	sighting.Chasing = n_Chasing
+	sighting.Climbing = n_Climbing
+	sighting.Eating = n_Eating
+	sighting.Foraging = n_Foraging
+
+	sighting.Kuks = n_Kuks
+	sighting.Quaas = n_Quaas
+	sighting.Moans = n_Moans
+	sighting.Tail_flags = n_Tail_flags
+	sighting.Tail_twitches = n_Tail_twitches
+
+	sighting.Approaches = n_Approaches
+	sighting.Indifferent = n_Indifferent
+	sighting.Runs_from = n_Runs_from
+
+	#save
+	sighting.save()
+	squirrels = Squirrel.objects.all()
+	context = {
+		'squirrels':squirrels
+	}
+	return render(request,'sightings/all.html',context)
