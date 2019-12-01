@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>Sightings Map</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+
+<style>
+#my-map {
+  width:960px;
+  height:500px;
+}
+</style>
+</head>
+<body>
+<div class="offset-4 col-sm-4">   
+<br></br> 
+  <h3>All Squirrel Sightings on Map</h3><br>
+  <br></br>
+</div>
+<div class="row"> 
+  <div class="offset-2 col-sm-2">
+    <div id="my-map" class="alignment-center"></div>
+  </div>  
+</div>  
+  
+<script>
+window.onload = function () {
+    var basemap = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  });
+
+    $.getJSON("{% static "map/GeoObs2.geojson" %}", function(data) {
+
+    var geojson = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        // print(feature.properties.Unique_Squirrel_ID)
+        layer.bindPopup('<p><b> Unique_Squirrel_ID: ' + feature.properties.Unique_Squirrel_ID + '</b></p>');
+        //EDIT HERE
+      }
+    });
+
+
+    var map = L.map('my-map')
+    .fitBounds(geojson.getBounds());
+    // .setView([51.505,-0.09], 9);
+    // EDIT HERE
+
+    basemap.addTo(map);
+    geojson.addTo(map);
+  });
+
+};
+</script>
+</body>
+</html>
