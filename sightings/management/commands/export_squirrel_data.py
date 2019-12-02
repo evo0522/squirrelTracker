@@ -1,25 +1,19 @@
-# Todo export
-from django.core.management.base import BaseCommand 
+from django.core.management import BaseCommand
 from sightings.models import Squirrel
-from django.http import HttpResponse
-import csv 
+import csv
 import sys
 
-
 class Command(BaseCommand):
-	help = 'Export data to csv'
+    help = 'export data'
 
-	def add_arguements(self, parser):
-		parser.add_argument('path')
+    def add_arguments(self, parser):
+        parser.add_argument('path',type=str,help="csv file")
 
-	def handle(self,*args, **operant):
-		 meta = Squirrel._meta
-		 field_names = [field.name for field in meta.fields]
-		 file_path = operant['path']
-
-		 with open(file_path, 'w') as outputfile:
-		 	writer = csv.writer(outputfile)
-		 	writer.writerow(field_names)
-		 	for item in Squirrel.objects.all():
-		 		writer.writerow([getattr(item, field) for field in field_names])
-
+    def handle(self, path, **options):
+        with open(path, 'w', newline='') as f:
+            model = Squirrel
+            field_names = [fa.name for fa in model._meta.fields]
+            writer = csv.writer(f, quoting=csv.QUOTE_ALL)
+            writer.writerow(field_names)
+            for instance in model.objects.all():
+                writer.writerow([getattr(instance, fi) for fi in field_names])
