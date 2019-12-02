@@ -182,11 +182,17 @@ def stats(request):
         squirrel=Squirrel.objects.all()
         geo_dist=squirrel.aggregate(avg_latitude=Avg('Latitude'),avg_longitude=Avg('Longitude'))
         age_dist=squirrel.values('Age').annotate(count_age=Count('Age')).order_by('count_age')
-        age_min_longitude=squirrel.values('Age').annotate(Min('Longitude'))
-        age_max_longitude=squirrel.values('Age').annotate(Max('Longitude'))
-        fur_color=squirrel.values('Primary_Fur_Color').annotate(count_fur=Count('Primary_Fur_Color')).order_by('count_fur')
-        shift=squirrel.values('Shift').annotate(count_shift=Count('Shift')).order_by('count_shift')
-        return render(request, 'sightings/stats.html',{'geo_dist'=geo_dist,'age_dist'=age_dist,'age_min_longitude'=age_min_longitude,'age_max_longitude'=age_max_longitude,'fur_color'=fur_color,'shift'=shift})
+        fur_color = squirrel.values('Primary_Fur_Color').annotate(count_fur=Count('Primary_Fur_Color')).order_by('count_fur')
+        shift = squirrel.values('Shift').annotate(count_shift=Count('Shift'))
+        running = squirrel.values('Running').annotate(count_run=Count('Running')).filter(Running="True")
+        Nrunning = squirrel.values('Running').annotate(count_run=Count('Running')).filter(Running="False")
+
+        return render(request, 'sightings/stats.html',{'geo_dist': geo_dist,
+        	'age_dist':age_dist,
+        	'fur_color':fur_color,
+        	'shift':shift,
+        	'running':running,
+        	'Nrunning':Nrunning})
 
 
 

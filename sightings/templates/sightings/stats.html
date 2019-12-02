@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Full list of squirrel</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+
+
+<div class="container-fluid bg-3 text-center">
+<br></br>    
+  <h1>General Stats about the Sightings</h2>
+</div>
+  <div class="row">
+      <p></p>
+    </div> 
+
+  <div class="row">
+    <div class="offset-2 ">
+      <h2>Statistics about estimated center of all squirrel sightings coordinates </h2>
+    </div>
+  </div>   
+ 	<div class="row">
+    <div class="offset-2 ">
+      The average coordinate of the squirrel sightings (Lat,Lon): [{{geo_dist.avg_latitude}},{{geo_dist.avg_longitude}}] 
+    </div>
+    <br>
+  </div>  
+  <div class="row">
+      <p></p>
+    </div> 
+  <div class="row">
+    <div class="offset-2 ">
+      <h2>Statistics about the time when squirrel are sighted</h2>
+    </div>
+  </div>   
+  <div class="row">
+    <div class="offset-2 ">
+        {% for time in shift %}
+          The number of squirrel sightings in the {{time.Shift}} time: {{time.count_shift}}. <br>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+      <p></p>
+  </div> 
+  <div class="row">
+    <div class="offset-2 ">
+      <h2>Statistics about the colors of the sighted squirrels </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-2 ">
+        {% for col in fur_color %}
+          The number of {{col.Primary_Fur_Color}} squirrel is: {{col.count_fur}}. <br>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="row"></div> 
+  <div class="row">
+    <div class="offset-2 ">
+      <h2>Statistics about the age group of the sighted squirrels </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-2 ">
+        {% for ages in age_dist %}
+          {{ages.count_age}} squirrels are identified in the {{ages.Age}} age group . <br>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+      <p></p>
+  </div> 
+  <div class="row">
+    <div class="offset-2 ">
+      <h2>Statistics about the kinetic status the sighted squirrels </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset-2 ">
+        {% for status in running %}
+          {{status.count_run}} squirrels are identified as running. <br>
+        {% endfor %}
+        {% for status2 in Nrunning %}
+          {{status2.count_run}} squirrels are identified as not running. <br>
+        {% endfor %}
+    </div>
+  </div>
+  <div class="row">
+      <p></p>
+  </div>     
+</body>
+</html>

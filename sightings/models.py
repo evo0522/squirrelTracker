@@ -24,19 +24,21 @@ class Squirrel(models.Model):
 
     ADULT = 'Adult'
     JUVENILE = 'Juvenile'
+    UNKNOWN = 'Unknown'
     AGE_CHOICES = (
-        (ADULT, 'Adult'),(JUVENILE, 'Juvenile'),
+        (ADULT, 'Adult'),(JUVENILE, 'Juvenile'),(UNKNOWN, 'Unknown'),
     )
     Age = models.CharField(
     	help_text=_('Age'),
         choices=AGE_CHOICES,
-        default='',
+        default='Unknown',
         max_length = 50)
     Shift = models.CharField(
         help_text=_('Shift'),
         max_length=2)
     Primary_Fur_Color = models.CharField(
     	help_text=_('Primary_Fur_Color'),
+        default='Unknown',
     	max_length = 50)
     Location = models.CharField(
     	help_text=_('Location1'),

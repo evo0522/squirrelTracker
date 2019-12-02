@@ -22,14 +22,24 @@ class Command(BaseCommand):
                next(data,None)
                for row in data:
                     #print(row)
+                    age = row[7]
+                    if(row[7] == ''):
+                         age = "Unknown"
+                    if(row[7] == '?'):
+                         age = "Unknown"
+                         
+                    color = row[8]
+                    if(row[8] == ''):
+                         color = "Unknown"
+
                     squirrel,created = Squirrel.objects.get_or_create(
                          Longitude = row[0],
                          Latitude = row[1],
                          Unique_Squirrel_ID = row[2],
                          Date = dt.datetime.strptime(row[5].strip(),'%m%d%Y').date(),
-                         Age = row[7],
+                         Age = age,
                          Shift = row[4],
-                         Primary_Fur_Color = row[8],
+                         Primary_Fur_Color = color,
                          Location = row[12],
                          Specific_Location = row[14],
                          Other_Activities = row[20],
