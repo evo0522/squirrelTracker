@@ -18,19 +18,18 @@ def list(request):
 	return render(request,'sightings/all.html',context)
 
 def single(request, sq_id):
-    if request.method == 'GET':
-         squirrel = Squirrel.objects.filter(Unique_Squirrel_ID=sq_id).first()
-         context = {
-                       'squirrel':squirrel
-         }
-         print(squirrel.id)
-         return render(request,'sightings/sighting.html',context)
-
-     elif request.method == 'DELETE':
-         sq = Squirrel.objects.filter(Unique_Squirrel_ID=sq_id)
-         for sighting in sq:
-             sighting.delete()
-         return HttpResponse('All Sightings related to squirrel '+str(sq_id)+' have been deleted')
+        if request.method == 'GET':
+            squirrel = Squirrel.objects.filter(Unique_Squirrel_ID=sq_id).first()
+            context = {
+                    'squirrel':squirrel
+                    }
+            print(squirrel.id)
+            return render(request,'sightings/sighting.html',context)
+        elif request.method == 'DELETE':
+            sq = Squirrel.objects.filter(Unique_Squirrel_ID=sq_id)
+            for sighting in sq:
+                sighting.delete()
+            return HttpResponse('All Sightings related to squirrel '+str(sq_id)+' have been deleted')
 
 
 def add(request):
