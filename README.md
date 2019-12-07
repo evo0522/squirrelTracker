@@ -1,5 +1,4 @@
 # squirrelTracker
-# squirrelTracker
 
 ## Introduction
 In this project, we implemented a django web applicaiton to visualize a dataset of roughly 3000+ squirrel sightings at New York central park. It has 8 features: 
