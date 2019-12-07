@@ -1,4 +1,6 @@
 runtime: python37
+entrypoint: gunicorn -b :$PORT squirrelTracker.wsgi:application
+
 
 manual_scaling:
   instances: 1
