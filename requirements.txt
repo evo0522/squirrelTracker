@@ -38,6 +38,11 @@ pickleshare==0.7.5
 prometheus-client==0.7.1
 prompt-toolkit==2.0.10
 psycopg2==2.7.3.2
+django-geojson==2.10.0
+django-leaflet==0.24.0
+jsonfield==2.0.2
+Pillow==6.2.0
+six==1.10.0
 ptyprocess==0.6.0
 pycodestyle==2.5.0
 Pygments==2.4.2
