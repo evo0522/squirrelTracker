@@ -39,7 +39,7 @@ python create_geojson.py
 /Map will show a map that displays the location of the squirrel sightings on an
 
 ### Full list of squirrel sightings
-[/sightings] (https://uplifted-valor-252914.appspot.com/sightings/) lists all squirrel sightings with links to edit and add sightings
+[/sightings](https://uplifted-valor-252914.appspot.com/sightings/) lists all squirrel sightings with links to edit and add sightings
 
 ### Sighting Edit page 
 [/sightings/<unique-squirrel-id>](https://uplifted-valor-252914.appspot.com/sightings/37F-PM-1014-03/) allows user to update a particular sighting
