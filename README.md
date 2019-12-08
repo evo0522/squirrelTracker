@@ -78,9 +78,9 @@ In our test run, we added a new squirrel sighting with squirrelID: Test123
 
 
 ## Contributors:
-Group Name: [TODO]
+Group Name: [Project Group 27]
 
-Section: [TODO]
+Section: [002]
 
 Contributors: Yihan Wang, Jiayun Liu
 
