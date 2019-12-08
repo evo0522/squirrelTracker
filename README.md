@@ -38,19 +38,34 @@ python create_geojson.py
 ### Map
 [/Map](https://uplifted-valor-252914.appspot.com/map/) will show a map that displays the location of the squirrel sightings on an
 
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/map.jpeg)
+
+
 ### Full list of squirrel sightings
 [/sightings/](https://uplifted-valor-252914.appspot.com/sightings/) lists all squirrel sightings with links to edit and add sightings
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/list.jpeg)
+
 
 ### Sighting Edit page 
 [/sightings/unique-squirrel-id](https://uplifted-valor-252914.appspot.com/sightings/37F-PM-1014-03/) allows user to update a particular sighting
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/update.jpeg)
+
 
 ### Adding sighting 
 [/sightings/add](https://uplifted-valor-252914.appspot.com/sightings/add/) allows user to create a new sighting
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/add.jpeg)
+
+In our test run, we added a new squirrel sighting with squirrelID: Test123
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/add_success.jpeg)
+
+
 
 ### Deleting sightings
 /sightings/unique-squirrel-id allows user to delete all sightings related to a specific squirrel. However, since delete does does not require a front-end page to illustrate it. We simply just implemented as a method, which can be triggered via Postman. 
 
 ❗️Method: DELETE
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/delete.jpeg)
+
 ### General stats
 [/sightings/stats](https://uplifted-valor-252914.appspot.com/sightings/stats/) shows some particular stats about this dataset, including: 
 * Statistics about estimated center of all squirrel sightings coordinates
@@ -58,6 +73,8 @@ python create_geojson.py
 * Statistics about the colors of the sighted squirrels
 * Statistics about the age group of the sighted squirrels
 * Statistics about the kinetic status the sighted squirrels
+
+![map](https://github.com/evo0522/squirrelTracker/blob/master/screenshots/stats.jpeg)
 
 
 ## Contributors:
