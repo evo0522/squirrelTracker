@@ -49,9 +49,7 @@ python create_geojson.py
 
 ### Deleting sightings
 /sightings/<unique-squirrel-id> allows user to delete all sightings related to a specific squirrel. However, since delete does does not require a front-end page to illustrate it. We simply just implemented as a method, which can be triggered via Postman. 
-```
-⚠️ Method: DELETE ⚠️
-```
+❗️Method: DELETE
 ### General stats
 [/sightings/stats](https://uplifted-valor-252914.appspot.com/sightings/stats/) shows some particular stats about this dataset, including: 
 * Statistics about estimated center of all squirrel sightings coordinates
