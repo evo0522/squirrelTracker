@@ -17,6 +17,12 @@ In this project, we implemented a django web applicaiton to visualize a dataset 
 ## Webapp Link
 The deployed webapp can be found here: [link](https://uplifted-valor-252914.appspot.com/sightings/)
 
+## Environment
+This project is using python 3. If your python path is not correctly configured, you might need run this project locally by 
+```
+python3 manage.py runserver
+```
+
 ## Management & Functional Commands
 Import: A command that can be used to import the data from the 2018 census file (in CSV format). The file path should be specified at the command line after the name of the management command.
 
@@ -85,3 +91,5 @@ Section: [002]
 Contributors: Yihan Wang, Jiayun Liu
 
 UNIs: [yw3407], [jl5528]
+
+Commits: The reason one of our teamates has 40K + lines of code addition is primarily because of the sqlite3 database. We kept our testing database as a record to test feature and track changes to the code.
